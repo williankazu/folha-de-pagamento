@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Folha de Pagamento 2025 - Brasil</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📋 Folha de Pagamento 2025 - Brasil</h1>
+
+      <div class="grid">
+        <div class="input-group">
+          <label for="nome">Nome do Funcionário:</label>
+          <input type="text" id="nome" required />
+          <div class="error-message" id="nome-error">Campo obrigatório</div>
+        </div>
+
+        <div class="input-group">
+          <label for="salario">Salário Bruto (R$):</label>
+          <input type="number" id="salario" step="0.01" required />
+          <div class="error-message" id="salario-error">Valor inválido</div>
+        </div>
+
+        <div class="input-group">
+          <label for="dependentes">Número de Dependentes:</label>
+          <input type="number" id="dependentes" min="0" value="0" />
+        </div>
+
+        <div class="input-group">
+          <label for="horas-extras">Horas Extras:</label>
+          <input type="number" id="horas-extras" min="0" value="0" />
+        </div>
+
+        <div class="input-group">
+          <label for="vale-transporte">Vale Transporte (R$):</label>
+          <input type="number" id="vale-transporte" min="0" value="0" />
+        </div>
+
+        <div class="input-group">
+          <label for="plano-saude">Plano de Saúde (R$):</label>
+          <input type="number" id="plano-saude" min="0" value="0" />
+        </div>
+      </div>
+
+      <button onclick="calcularFolha()">Calcular Folha</button>
+
+      <div class="results" id="results" style="display: none">
+        <div class="result-item">
+          <span>Salário Bruto:</span>
+          <span class="result-value" id="res-bruto"></span>
+        </div>
+        <div class="result-item">
+          <span>Horas Extras (+50%):</span>
+          <span class="result-value" id="res-horas-extras"></span>
+        </div>
+        <div class="result-item">
+          <span>INSS (2025):</span>
+          <span class="result-value" id="res-inss"></span>
+        </div>
+        <div class="result-item">
+          <span>IRRF:</span>
+          <span class="result-value" id="res-irrf"></span>
+        </div>
+        <div class="result-item">
+          <span>Vale Transporte:</span>
+          <span class="result-value" id="res-vt"></span>
+        </div>
+        <div class="result-item">
+          <span>Plano de Saúde:</span>
+          <span class="result-value" id="res-plano-saude"></span>
+        </div>
+        <div class="result-item">
+          <span>Dependentes (R$ 189,59 cada):</span>
+          <span class="result-value" id="res-dependentes"></span>
+        </div>
+        <div class="result-item highlight">
+          <span>Salário Líquido:</span>
+          <span class="result-value" id="res-liquido"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
